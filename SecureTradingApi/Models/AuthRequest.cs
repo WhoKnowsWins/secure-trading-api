@@ -37,6 +37,9 @@ namespace SecureTradingApi.Models
         [JsonConverter(typeof(StringEnumConverter))]
         public AuthMethod AuthMethod { get; set; }
 
+        [JsonProperty("securitycode")]
+        public string SecurityCode { get; set; }
+
         [JsonProperty("initiationreason")]
         public string InitiationReason { get; set; }
 
@@ -44,5 +47,8 @@ namespace SecureTradingApi.Models
         public CredentialsOnFile CredentialsOnFile { get; set; }
         [JsonProperty("credentialsonfile")]
         private string _credentialsOnFile => ((int)CredentialsOnFile).ToString();
+
+        
+
     }
 }
